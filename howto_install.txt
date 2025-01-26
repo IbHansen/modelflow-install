@@ -9,3 +9,21 @@ conda activate mftest
 pip install dash_interactive_graphviz
 jupyter contrib nbextension install --user
 jupyter nbextension enable hide_input_all/main && jupyter nbextension enable splitcell/splitcell && jupyter nbextension enable toc2/main
+
+# Should not be nessecary for conda install 
+# jupyter contrib nbextension install --user
+
+# install pinned version in enviorement
+conda create -n mf_pinned -c ibh -c  conda-forge --experimental-solver=libmamba modelflow_pinned   -y
+conda create -n mf_build -c ibh -c  conda-forge --experimental-solver=libmamba modelflow_test_build  python=3.9 -y
+conda activate mf_pinned
+pip install dash_interactive_graphviz
+jupyter contrib nbextension install --user
+jupyter nbextension enable hide_input_all/main
+jupyter nbextension enable splitcell/splitcell
+jupyter nbextension enable toc2/main
+
+
+# install in anaconda conda 
+download anaconda 
+install it 
